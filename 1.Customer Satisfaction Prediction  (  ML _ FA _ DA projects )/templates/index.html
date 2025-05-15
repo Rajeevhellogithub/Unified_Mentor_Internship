@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Satisfaction Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Satisfaction Prediction</h1>
+        <p>Enter the customer details to predict the satisfaction rating.</p>
+        <form method="POST">
+            <div class="form-group">
+                <label for="cust_age">Customer Age:</label>
+                <input type="number" id="cust_age" name="cust_age" min="18" max="80" value="18" step="1" required>
+            </div>
+            <div class="form-group">
+                <label for="cust_gender">Customer Gender:</label>
+                <select id="cust_gender" name="cust_gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="prod_purchased">Product Purchased:</label>
+                <select id="prod_purchased" name="prod_purchased" required>
+                    <option value="Canon EOS">Canon EOS</option>
+                    <option value="GoPro Hero">GoPro Hero</option>
+                    <option value="Nest Thermostat">Nest Thermostat</option>
+                    <option value="Philips Hue Lights">Philips Hue Lights</option>
+                    <option value="Amazon Echo">Amazon Echo</option>
+                    <option value="LG Smart TV">LG Smart TV</option>
+                    <option value="Sony Xperia">Sony Xperia</option>
+                    <option value="Roomba Robot Vacuum">Roomba Robot Vacuum</option>
+                    <option value="Apple AirPods">Apple AirPods</option>
+                    <option value="LG OLED">LG OLED</option>
+                    <option value="iPhone">iPhone</option>
+                    <option value="Sony 4K HDR TV">Sony 4K HDR TV</option>
+                    <option value="Garmin Forerunner">Garmin Forerunner</option>
+                    <option value="LG Washing Machine">LG Washing Machine</option>
+                    <option value="Canon DSLR Camera">Canon DSLR Camera</option>
+                    <option value="Nikon D">Nikon D</option>
+                    <option value="Nintendo Switch Pro Controller">Nintendo Switch Pro Controller</option>
+                    <option value="Google Pixel">Google Pixel</option>
+                    <option value="Fitbit Charge">Fitbit Charge</option>
+                    <option value="Sony PlayStation">Sony PlayStation</option>
+                    <option value="HP Pavilion">HP Pavilion</option>
+                    <option value="Microsoft Office">Microsoft Office</option>
+                    <option value="Amazon Kindle">Amazon Kindle</option>
+                    <option value="Google Nest">Google Nest</option>
+                    <option value="Dyson Vacuum Cleaner">Dyson Vacuum Cleaner</option>
+                    <option value="Bose SoundLink Speaker">Bose SoundLink Speaker</option>
+                    <option value="Autodesk AutoCAD">Autodesk AutoCAD</option>
+                    <option value="Microsoft Xbox Controller">Microsoft Xbox Controller</option>
+                    <option value="Samsung Galaxy">Samsung Galaxy</option>
+                    <option value="PlayStation">PlayStation</option>
+                    <option value="Fitbit Versa Smartwatch">Fitbit Versa Smartwatch</option>
+                    <option value="Microsoft Surface">Microsoft Surface</option>
+                    <option value="Bose QuietComfort">Bose QuietComfort</option>
+                    <option value="Samsung Soundbar">Samsung Soundbar</option>
+                    <option value="Xbox">Xbox</option>
+                    <option value="Asus ROG">Asus ROG</option>
+                    <option value="MacBook Pro">MacBook Pro</option>
+                    <option value="Dell XPS">Dell XPS</option>
+                    <option value="Lenovo ThinkPad">Lenovo ThinkPad</option>
+                    <option value="GoPro Action Camera">GoPro Action Camera</option>
+                    <option value="Adobe Photoshop">Adobe Photoshop</option>
+                    <option value="Nintendo Switch">Nintendo Switch</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ticket_type">Ticket Type:</label>
+                <select id="ticket_type" name="ticket_type" required>
+                    <option value="Refund request">Refund request</option>
+                    <option value="Technical issue">Technical issue</option>
+                    <option value="Cancellation request">Cancellation request</option>
+                    <option value="Product inquiry">Product inquiry</option>
+                    <option value="Billing inquiry">Billing inquiry</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ticket_sub">Ticket Subject:</label>
+                <select id="ticket_sub" name="ticket_sub" required>
+                    <option value="Refund request">Refund request</option>
+                    <option value="Software bug">Software bug</option>
+                    <option value="Product compatibility">Product compatibility</option>
+                    <option value="Delivery problem">Delivery problem</option>
+                    <option value="Hardware issue">Hardware issue</option>
+                    <option value="Battery life">Battery life</option>
+                    <option value="Network problem">Network problem</option>
+                    <option value="Installation support">Installation support</option>
+                    <option value="Product setup">Product setup</option>
+                    <option value="Payment issue">Payment issue</option>
+                    <option value="Product recommendation">Product recommendation</option>
+                    <option value="Account access">Account access</option>
+                    <option value="Peripheral compatibility">Peripheral compatibility</option>
+                    <option value="Data loss">Data loss</option>
+                    <option value="Cancellation request">Cancellation request</option>
+                    <option value="Display issue">Display issue</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ticket_status">Ticket Status:</label>
+                <select id="ticket_status" name="ticket_status" required>
+                    <option value="Closed">Closed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ticket_priority">Ticket Priority:</label>
+                <select id="ticket_priority" name="ticket_priority" required>
+                    <option value="Medium">Medium</option>
+                    <option value="Critical">Critical</option>
+                    <option value="High">High</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ticket_channel">Ticket Channel:</label>
+                <select id="ticket_channel" name="ticket_channel" required>
+                    <option value="Email">Email</option>
+                    <option value="Phone">Phone</option>
+                    <option value="Social media">Social media</option>
+                    <option value="Chat">Chat</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Predict Customer Ratings</button>
+        </form>
+        {% if prediction %}
+            <div class="prediction-result">
+                <h3>Prediction:</h3>
+                <p>The predicted customer rating is: {{ prediction }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
